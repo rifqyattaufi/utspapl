@@ -1,23 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- main css -->
-    <link rel="stylesheet" href="<?= base_url('assets/') ?>css/style.css">
-    
-    <!-- iconscout css -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    
-    <title>Dashboard Test</title>
-</head>
-<body>
-    <nav>
-        <div class="logo-name">
-            
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">Dashboard</span>
         </div>
-    </nav>
-</body>
-</html>
+
+        <div class="boxes">
+            <div class="box box1">
+                <i class="uil uil-thumbs-up"></i>
+                <span class="text">Total Likes</span>
+                <span class="number">50,120</span>
+            </div>
+            <div class="box box2">
+                <i class="uil uil-comments"></i>
+                <span class="text">Comments</span>
+                <span class="number">20,120</span>
+            </div>
+            <div class="box box3">
+                <i class="uil uil-share"></i>
+                <span class="text">Total Share</span>
+                <span class="number">10,120</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="title">
+            <i class="uil uil-clock-three"></i>
+            <span class="text">Recent Activity</span>
+        </div>
+    </div>
+
+</div>
