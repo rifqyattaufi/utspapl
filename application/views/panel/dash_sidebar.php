@@ -15,23 +15,23 @@
             </a></li>
             <li><a href="#">
                 <i class="uil uil-files-landscapes"></i>
-                <span class="link-name">Content</span>
+                <span class="link-name">Data Buku</span>
             </a></li>
             <li><a href="#">
                 <i class="uil uil-chart"></i>
-                <span class="link-name">Analytics</span>
+                <span class="link-name">Data Anggota</span>
             </a></li>
             <li><a href="#">
                 <i class="uil uil-thumbs-up"></i>
-                <span class="link-name">Like</span>
+                <span class="link-name">Data Petugas</span>
             </a></li>
             <li><a href="#">
                 <i class="uil uil-comments"></i>
-                <span class="link-name">Comments</span>
+                <span class="link-name">Data Peminjaman</span>
             </a></li>
             <li><a href="#">
                 <i class="uil uil-share"></i>
-                <span class="link-name">Share</span>
+                <span class="link-name">Data Pengembalian</span>
             </a></li>
         </ul>
         
