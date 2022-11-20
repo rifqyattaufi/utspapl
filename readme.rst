@@ -7,8 +7,8 @@ Tugas MVC untuk memenuhi tugas mata kuliah Perancangan dan Arsitektur Perangkat 
 *******************
 Author
 *******************
-1201210006 - Ryan Adi Saputra
-1201210016 - Muhammad Rifqy Attaufi Pratama N.
+- 1201210006 - Ryan Adi Saputra
+- 1201210016 - Muhammad Rifqy Attaufi Pratama N.
 
 
 
