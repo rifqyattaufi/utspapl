@@ -22,10 +22,6 @@
                     <span class="link-name">Data Anggota</span>
                 </a></li>
             <li><a href="#">
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="link-name">Data Petugas</span>
-                </a></li>
-            <li><a href="#">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Data Peminjaman</span>
                 </a></li>
