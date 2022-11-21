@@ -3,12 +3,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+    public function __controler()
+    {
+        parent::__construct();
+    }
+    
     public function index()
     {
+        $data['title'] = 'Login Page';
+        
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
-
-        $data['title'] = 'Login Page';
+        
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/login');
@@ -17,13 +23,15 @@ class Auth extends CI_Controller
             $this->login();
         }
     }
-
+    
     private function login()
     {
+        $this->load->model('User_model');
+
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+        $user = $this->User_model->getUserByEmail($email);
 
         if ($user) {
             if ($user['is_active'] == 1) {
@@ -55,6 +63,11 @@ class Auth extends CI_Controller
 
     public function register()
     {
+        $this->load->model('User_model');
+        
+        $data['title'] = 'User Registration';
+
+
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registered!'
@@ -67,25 +80,24 @@ class Auth extends CI_Controller
             'matches' => 'Repeat Password dont match!'
         ]);
 
-        $data['title'] = 'User Registration';
+
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/register');
             $this->load->view('templates/auth_footer');
         } else {
-            $data = [
-                'name' => htmlspecialchars($this->input->post('name')),
-                'email' => htmlspecialchars($this->input->post('email')),
-                'image' => 'default.jpg',
-                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-                'role' => 1,
-                'is_active' => 1,
-                'date_created' => time()
-            ];
-
-            $this->db->insert('user', $data);
+            $this->User_model->register();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your account has been created. Please Login</div>');
             redirect('auth');
         }
+    }
+
+    function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
+        redirect('auth');
     }
 }
