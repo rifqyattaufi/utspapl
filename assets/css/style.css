@@ -228,6 +228,7 @@ nav.close ~ .dashboard .top {
     background-color: var(--panel-color);
     padding: 10px 14px;
     transition: var(--tran-05);
+    z-index: 100;
 }
 
 .dashboard .top .sidebar-toggle {
@@ -280,13 +281,23 @@ nav.close ~ .dashboard .top {
     padding-top: 30px;
 }
 
-.dash-content .title {
+.dash-content .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.dash-content .title,
+.dash-content .add-btn {
     display: flex;
     align-items: center;
     margin: 70px 0 30px 0;
 }
 
-.dash-content .title i {
+.dash-content .title i,
+.dash-content .add-btn i {
     position: relative;
     height: 35px;
     width: 35px;
@@ -299,11 +310,26 @@ nav.close ~ .dashboard .top {
     font-size: 24px;
 }
 
+.dash-content .add-btn {
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 6px;
+}
+
 .dash-content .title .text {
     font-size: 24px;
     font-weight: 600;
     color: var(--text-color);
     margin-left: 10px;
+}
+
+.dash-content .add-btn .btn-add {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--title-icon-color);
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .dash-content .boxes {
