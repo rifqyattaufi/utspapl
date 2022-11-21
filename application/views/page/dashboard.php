@@ -9,7 +9,7 @@
             <div class="box box1">
                 <i class="uil uil-books"></i>
                 <span class="text">Jumlah Buku</span>
-                <span class="number">50,120</span>
+                <span class="number"><?= $buku; ?></span>
             </div>
             <div class="box box2">
                 <i class="uil uil-file-upload-alt"></i>
