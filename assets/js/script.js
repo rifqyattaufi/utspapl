@@ -12,5 +12,7 @@ sidebarToggle.addEventListener('click', () => {
 });
 
 $(document).ready(function () {
-    $('#example').DataTable();
+    $('#tb_buku').DataTable({
+        responsive: true
+    });
 });

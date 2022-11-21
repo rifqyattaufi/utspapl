@@ -1,3 +1,11 @@
+        <div class="bottom">
+            <span>
+                <strong> 
+                    Copyright &copy; 2022 Perpustakaan MVC 
+                </strong> 
+                    | All rights reserved.
+            </span>
+        </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>

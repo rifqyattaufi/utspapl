@@ -14,19 +14,23 @@
                     <span class="link-name">Dashboard</span>
                 </a></li>
             <li><a href="<?= base_url('buku'); ?>">
-                    <i class="uil uil-files-landscapes"></i>
+                    <i class="uil uil-books"></i>
                     <span class="link-name">Data Buku</span>
                 </a></li>
+            <li><a href="<?= base_url('kategori'); ?>">
+                    <i class="uil uil-tag"></i>
+                    <span class="link-name">Data Kategori</span>
+                </a></li>
             <li><a href="<?= base_url('anggota'); ?>"">
-                    <i class="uil uil-chart"></i>
+                    <i class="uil uil-users-alt"></i>
                     <span class="link-name">Data Anggota</span>
                 </a></li>
             <li><a href="<?= base_url('peminjaman'); ?>"">
-                    <i class="uil uil-comments"></i>
+                <i class="uil uil-file-upload-alt"></i>
                     <span class="link-name">Data Peminjaman</span>
                 </a></li>
             <li><a href="<?= base_url('pengembalian'); ?>"">
-                    <i class="uil uil-share"></i>
+                <i class="uil uil-file-download-alt"></i>
                     <span class="link-name">Data Pengembalian</span>
                 </a></li>
         </ul>
@@ -57,10 +61,5 @@
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
 
-        <div class="search-box">
-            <i class="uil uil-search"></i>
-            <input type="text" placeholder="Search here...">
-        </div>
-
-        <img src="<?= base_url('assets/') ?>images/person.png" alt="avatar">
+        <img src="<?= base_url('assets/') ?>images/user.jpg" alt="avatar">
     </div>
