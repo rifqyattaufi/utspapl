@@ -25,5 +25,13 @@ class Buku extends CI_Controller
         $this->load->view('page/buku/add_buku');
         $this->load->view('panel/dash_footer');
     }
+
+    public function edit_buku()
+    {
+        $this->load->view('panel/dash_header');
+        $this->load->view('panel/dash_sidebar');
+        $this->load->view('page/buku/edit_buku');
+        $this->load->view('panel/dash_footer');
+    }
 }
 ?>
