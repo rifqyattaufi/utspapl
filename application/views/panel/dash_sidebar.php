@@ -9,23 +9,23 @@
 
     <div class="menu-items">
         <ul class="nav-links">
-            <li><a href="#">
+            <li><a href="<?= base_url('user'); ?>"">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-            <li><a href="#">
+            <li><a href="<?= base_url('buku'); ?>">
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Data Buku</span>
                 </a></li>
-            <li><a href="#">
+            <li><a href="<?= base_url('anggota'); ?>"">
                     <i class="uil uil-chart"></i>
                     <span class="link-name">Data Anggota</span>
                 </a></li>
-            <li><a href="#">
+            <li><a href="<?= base_url('peminjaman'); ?>"">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Data Peminjaman</span>
                 </a></li>
-            <li><a href="#">
+            <li><a href="<?= base_url('pengembalian'); ?>"">
                     <i class="uil uil-share"></i>
                     <span class="link-name">Data Pengembalian</span>
                 </a></li>
