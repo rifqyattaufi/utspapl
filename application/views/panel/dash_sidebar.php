@@ -10,36 +10,36 @@
     <div class="menu-items">
         <ul class="nav-links">
             <li><a href="#">
-                <i class="uil uil-estate"></i>
-                <span class="link-name">Dashboard</span>
-            </a></li>
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
             <li><a href="#">
-                <i class="uil uil-files-landscapes"></i>
-                <span class="link-name">Data Buku</span>
-            </a></li>
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Data Buku</span>
+                </a></li>
             <li><a href="#">
-                <i class="uil uil-chart"></i>
-                <span class="link-name">Data Anggota</span>
-            </a></li>
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Data Anggota</span>
+                </a></li>
             <li><a href="#">
-                <i class="uil uil-thumbs-up"></i>
-                <span class="link-name">Data Petugas</span>
-            </a></li>
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Data Petugas</span>
+                </a></li>
             <li><a href="#">
-                <i class="uil uil-comments"></i>
-                <span class="link-name">Data Peminjaman</span>
-            </a></li>
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Data Peminjaman</span>
+                </a></li>
             <li><a href="#">
-                <i class="uil uil-share"></i>
-                <span class="link-name">Data Pengembalian</span>
-            </a></li>
+                    <i class="uil uil-share"></i>
+                    <span class="link-name">Data Pengembalian</span>
+                </a></li>
         </ul>
-        
+
         <ul class="logout-mode">
-            <li><a href="#">
-                <i class="uil uil-signout"></i>
-                <span class="link-name">Logout</span>
-            </a></li>
+            <li><a href="<?= base_url('auth/logout') ?>">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
 
             <li class="mode">
                 <a href="#">
