@@ -39,7 +39,7 @@
                             <td><?= $row['nama_kategori']; ?></td>
                             <td>
                                 <a href="<?= base_url('kategori/edit/') . $row['id_kategori']; ?>" class="btn btn-info p-2 mt-1">
-                                    <i class="uil uil-edit"></i> Detail
+                                    <i class="uil uil-edit"></i> Edit
                                 </a>
                                 <a href="<?= base_url('kategori/delete/') . $row['id_kategori']; ?>" class="btn btn-danger p-2 mt-1" onclick="return confirm('Anda yakin akan menghapus buku ini ?')">
                                     <i class="uil uil-trash-alt"></i> Hapus
