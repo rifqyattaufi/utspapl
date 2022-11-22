@@ -14,6 +14,11 @@ class Kategori_model extends CI_Model
         return $this->db->get_where('kategori', ['is_deleted' => 0])->result_array();
     }
 
+    public function getKategoriById($id)
+    {
+        return $this->db->get_where('kategori', ['id_kategori' => $id])->row_array();
+    }
+
     public function addKategori()
     {
         $data = [
@@ -21,6 +26,16 @@ class Kategori_model extends CI_Model
         ];
 
         $this->db->insert('kategori', $data);
+    }
+
+    public function editKategori($id)
+    {
+        $data = [
+            'nama_kategori' => $this->input->post('nama_kategori')
+        ];
+
+        $this->db->where('id_kategori', $id);
+        $this->db->update('kategori', $data);
     }
 
     public function deleteKategori($id)

@@ -32,13 +32,33 @@ class Kategori extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('panel/dash_header');
             $this->load->view('panel/dash_sidebar');
-            $this->load->view('page/kategori/add_kategori');
+            $this->load->view('page/kategori/kategori');
             $this->load->view('panel/dash_footer');
         } else {
             $this->Kategori_model->addKategori();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kategori berhasil ditambahkan!</div>');
             redirect('kategori');
         }
+    }
+
+    public function edit($id)
+    {
+        // $data['kategori'] = $this->Kategori_model->getKategoriById($id);
+
+        // $this->form_validation->set_rules('nama_kategori', 'Nama Kategori', 'required|trim', [
+        //     'required' => 'Nama Kategori tidak boleh kosong!'
+        // ]);
+
+        // if ($this->form_validation->run() == false) {
+        //     $this->load->view('panel/dash_header');
+        //     $this->load->view('panel/dash_sidebar');
+        //     $this->load->view('page/kategori/kategori', $data);
+        //     $this->load->view('panel/dash_footer');
+        // } else {
+        //     $this->Kategori_model->editKategori($id);
+        //     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kategori berhasil diubah!</div>');
+        //     redirect('kategori');
+        // }
     }
 
     public function delete($id)
