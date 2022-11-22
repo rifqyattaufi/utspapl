@@ -15,4 +15,12 @@ $(document).ready(function () {
     $('#tb_buku').DataTable({
         responsive: true
     });
+
+    $('#tb_anggota').DataTable({
+        responsive: true
+    });
+    
+    $('#tb_kategori').DataTable({
+        responsive: true
+    });
 });

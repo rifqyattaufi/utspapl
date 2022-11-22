@@ -8,6 +8,7 @@ class Buku extends CI_Controller
 	{
 		parent::__construct();
         $this->load->model('Buku_model');
+        $this->load->model('Kategori_model');
         $this->load->library('form_validation');
 	}
     
@@ -25,9 +26,10 @@ class Buku extends CI_Controller
     public function add_buku()
     {
 
+        $data['kategori'] = $this->Kategori_model->getKategori();
         $data['buku'] = $this->Buku_model->getAllBuku();
 
-        $this->form_validation->set_rules('kategori', 'Kategori', 'required|trim', [
+        $this->form_validation->set_rules('id_kategori', 'Kategori', 'required|trim', [
             'required' => 'Kategori tidak boleh kosong!'
         ]);
         

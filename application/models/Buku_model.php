@@ -17,7 +17,7 @@ class Buku_model extends CI_Model
     public function addBuku()
     {
         $data = [
-            'kategori_buku' => $this->input->post('kategori'),
+            'id_kategori' => $this->input->post('id_kategori'),
             'isbn' => $this->input->post('isbn'),
             'judul_buku' => $this->input->post('judul'),
             'penulis' => $this->input->post('penulis'),

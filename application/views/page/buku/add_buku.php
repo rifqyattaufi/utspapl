@@ -15,15 +15,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Kategori Buku</label>
-                                    <select class="form-control" name="kategori" required>
+                                    <select class="form-control" name="id_kategori" required>
                                         <option disabled selected value> -- Pilih Kategori -- </option>
-                                        <option value="Teknologi">Teknologi</option>
-                                        <option value="Sains">Sains</option>
-                                        <option value="Agama">Agama</option>
-                                        <option value="Fiksi">Fiksi</option>
-                                        <option value="Non Fiksi">Non Fiksi</option>
+                                        <?php foreach ($kategori as $row) { ?>
+                                            <option value="<?= $row['id_kategori']; ?>"><?= $row['nama_kategori']; ?></option>
+                                        <?php } ?>
                                     </select>
-                                    <?= form_error('kategori', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    <?= form_error('id_kategori', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>ISBN</label>
@@ -37,12 +35,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Penulis</label>
-                                    <input type="text" class="form-control" name="penulis" placeholder="Nama Penulis" required>
+                                    <input type="text" class="form-control" name="penulis" placeholder="Masukkan Nama Penulis" required>
                                     <?= form_error('penulis', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Penerbit</label>
-                                    <input type="text" class="form-control" name="penerbit" placeholder="Nama Penerbit" required>
+                                    <input type="text" class="form-control" name="penerbit" placeholder="Masukkan Nama Penerbit" required>
                                     <?= form_error('penerbit', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
