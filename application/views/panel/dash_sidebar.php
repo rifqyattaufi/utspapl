@@ -1,16 +1,18 @@
 <nav>
-    <div class="logo-name">
-        <div class="logo-image">
-            <img src="<?= base_url('assets/') ?>images/avatar.jpg" alt="logo">
+    <a href="<?= base_url() ?>">
+        <div class="logo-name">
+            <div class="logo-image">
+                <!-- <img src="<?= base_url('assets/') ?>images/avatar.jpg" alt="logo"> -->
+                <i class="uil uil-diary"></i>
+            </div>
+            <span class="logo-name">Perpustakaan Online</span>
         </div>
-
-        <span class="logo-name">Perpustakaan</span>
-    </div>
+    </a>
 
     <div class="menu-items">
         <ul class="nav-links">
             <li><a href="<?= base_url('user'); ?>"">
-                    <i class="uil uil-estate"></i>
+                    <i class=" uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
             <li><a href="<?= base_url('buku'); ?>">
@@ -22,7 +24,7 @@
                     <span class="link-name">Data Kategori</span>
                 </a></li>
             <li><a href="<?= base_url('anggota'); ?>"">
-                    <i class="uil uil-users-alt"></i>
+                    <i class=" uil uil-users-alt"></i>
                     <span class="link-name">Data Anggota</span>
                 </a></li>
         </ul>
@@ -53,7 +55,7 @@
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
         <h1>
-            <?= $this->session->userdata('name') ?>
+            <!-- <?= $title ?> -->
         </h1>
-        <img src="<?= base_url('assets/') ?>images/user.jpg" alt="avatar">
+        <!-- <img src="<?= base_url('assets/') ?>images/user.jpg" alt="avatar"> -->
     </div>

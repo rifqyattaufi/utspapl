@@ -102,4 +102,9 @@ class Buku_model extends CI_Model
         $this->db->where('id_buku', $id);
         $this->db->update('buku');
     }
+
+    public function countDipinjam()
+    {
+        return $this->db->get_where('buku', ['status' => 0])->num_rows();
+    }
 }

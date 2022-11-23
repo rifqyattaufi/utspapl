@@ -32,4 +32,9 @@ class User_model extends CI_Model
 
         $this->db->insert('user', $data);
     }
+
+    public function countUser()
+    {
+        return $this->db->get('user')->num_rows();
+    }
 }

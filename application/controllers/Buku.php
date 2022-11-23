@@ -17,7 +17,7 @@ class Buku extends CI_Controller
     {
         $data['buku'] = $this->Buku_model->getAllBuku();
 
-        $this->load->view('panel/dash_header');
+        $this->load->view('panel/dash_header', $data);
         $this->load->view('panel/dash_sidebar');
         $this->load->view('page/buku/buku', $data);
         $this->load->view('panel/dash_footer');

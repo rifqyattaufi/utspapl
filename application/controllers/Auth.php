@@ -44,14 +44,11 @@ class Auth extends CI_Controller
                 if (password_verify($password, $user['password'])) {
                     $data = [
                         'email' => $user['email'],
+                        'name' => $user['name'],
                         'role' => $user['role']
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role'] == 0) {
-                        redirect('admin');
-                    } else {
-                        redirect('user');
-                    }
+                    redirect('user');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
                     redirect('auth');
