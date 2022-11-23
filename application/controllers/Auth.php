@@ -7,14 +7,20 @@ class Auth extends CI_Controller
     {
         parent::__construct();
     }
-    
+
     public function index()
     {
+        if ($this->session->userdata('role') == 1) {
+            redirect('user');
+        } else if ($this->session->userdata('role') == 2) {
+            redirect('admin');
+        }
+
         $data['title'] = 'Login Page';
-        
+
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
-        
+
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/login');
@@ -23,7 +29,7 @@ class Auth extends CI_Controller
             $this->login();
         }
     }
-    
+
     private function login()
     {
         $this->load->model('User_model');
@@ -63,8 +69,13 @@ class Auth extends CI_Controller
 
     public function register()
     {
+        if ($this->session->userdata('role') == 1) {
+            redirect('user');
+        } else if ($this->session->userdata('role') == 2) {
+            redirect('admin');
+        }
         $this->load->model('User_model');
-        
+
         $data['title'] = 'User Registration';
 
 

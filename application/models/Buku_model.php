@@ -29,6 +29,30 @@ class Buku_model extends CI_Model
         $this->db->insert('buku', $data);
     }
 
+    public function addImage()
+    {
+        $last_row = $this->db->select('id_buku')->order_by('id_buku', "desc")->limit(1)->get('buku')->row();
+
+        $this->db->set('sampul', $this->upload->data('file_name'))->where('id_buku', $last_row->id_buku)->update('buku');
+    }
+
+    public function addPdf()
+    {
+        $last_row = $this->db->select('id_buku')->order_by('id_buku', "desc")->limit(1)->get('buku')->row();
+
+        $this->db->set('lampiran', $this->upload->data('file_name'))->where('id_buku', $last_row->id_buku)->update('buku');
+    }
+
+    public function updateImage($id)
+    {
+        $this->db->set('sampul', $this->upload->data('file_name'))->where('id_buku', $id)->update('buku');
+    }
+
+    public function updatePdf($id)
+    {
+        $this->db->set('lampiran', $this->upload->data('file_name'))->where('id_buku', $id)->update('buku');
+    }
+
     public function getBuku($id)
     {
         return $this->db->get_where('buku', ['id_buku' => $id])->row_array();
@@ -44,6 +68,21 @@ class Buku_model extends CI_Model
         $this->db->set('is_deleted', 1);
         $this->db->where('id_buku', $id);
         $this->db->update('buku');
+    }
+
+    public function editBuku()
+    {
+        $data = [
+            'id_kategori' => $this->input->post('id_kategori'),
+            'isbn' => $this->input->post('isbn'),
+            'judul_buku' => $this->input->post('judul'),
+            'penulis' => $this->input->post('penulis'),
+            'penerbit' => $this->input->post('penerbit'),
+            'tahun_buku' => $this->input->post('tahun'),
+            'keterangan' => $this->input->post('keterangan')
+        ];
+
+        $this->db->where('id_buku', $this->input->post('id_buku'))->update('buku', $data);
     }
 
 
