@@ -38,7 +38,12 @@ class Anggota extends CI_Controller
     
     public function detail($id)
     {
-        
+        $data['anggota'] = $this->Anggota_model->getAnggotaById($id);
+
+        $this->load->view('panel/dash_header');
+        $this->load->view('panel/dash_sidebar');
+        $this->load->view('page/anggota/detail_anggota', $data);
+        $this->load->view('panel/dash_footer');
     }
 
     public function delete($id)

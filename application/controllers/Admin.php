@@ -13,7 +13,6 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
-
 		$data['buku'] = $this->Buku_model->countBuku();
 
 		$this->load->view('panel/dash_header');

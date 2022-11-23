@@ -14,6 +14,11 @@ class Anggota_model extends CI_Model
         return $this->db->get_where('user', ['role' => 0, 'is_deleted' => 0])->result_array();
     }
 
+    public function getAnggotaById($id)
+    {
+        return $this->db->get_where('user', ['id' => $id])->row_array();
+    }
+
     public function block($id)
     {
         $this->db->set('is_active', 0);

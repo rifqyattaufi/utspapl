@@ -25,14 +25,6 @@
                     <i class="uil uil-users-alt"></i>
                     <span class="link-name">Data Anggota</span>
                 </a></li>
-            <li><a href="<?= base_url('peminjaman'); ?>"">
-                <i class="uil uil-file-upload-alt"></i>
-                    <span class="link-name">Data Peminjaman</span>
-                </a></li>
-            <li><a href="<?= base_url('pengembalian'); ?>"">
-                <i class="uil uil-file-download-alt"></i>
-                    <span class="link-name">Data Pengembalian</span>
-                </a></li>
         </ul>
 
         <ul class="logout-mode">
@@ -60,6 +52,8 @@
 <section class="dashboard">
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
-
+        <h1>
+            <?= $this->session->userdata('name') ?>
+        </h1>
         <img src="<?= base_url('assets/') ?>images/user.jpg" alt="avatar">
     </div>
