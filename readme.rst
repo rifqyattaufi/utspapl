@@ -13,7 +13,8 @@ Author
 *******************
 Repositories
 *******************
-[Berikut adalah repositori kami](https://github.com/rifqyattaufi/utspapl)
+[Berikut adalah repositori kami][1]
+[1]: https://github.com/rifqyattaufi/utspapl
 
 
 
