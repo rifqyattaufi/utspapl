@@ -13,6 +13,11 @@ class Buku_model extends CI_Model
     {
         return $this->db->get_where('buku', ['is_deleted' => 0])->result_array();
     }
+    
+    public function getAllBukuUser()
+    {
+        return $this->db->get_where('buku', ['is_deleted' => 0, 'status' => 1])->result_array();
+    }
 
     public function addBuku()
     {

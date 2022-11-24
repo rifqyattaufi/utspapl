@@ -16,7 +16,6 @@ class User extends CI_Controller
 		$data['buku'] = $this->Buku_model->countBuku();
 		$data['user'] = $this->User_model->countUser();
 		$data['dipinjam'] = $this->Buku_model->countDipinjam();
-		
 
 		$this->load->view('panel/dash_header');
 		$this->load->view('panel/dash_sidebar', $data);

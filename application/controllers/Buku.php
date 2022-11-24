@@ -7,6 +7,10 @@ class Buku extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        if(!$this->session->userdata('email')){
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">You are not logged in!</div>');
+            redirect('auth');
+        }
         $this->load->model('Buku_model');
         $this->load->model('Kategori_model');
         $this->load->library('form_validation');
@@ -15,7 +19,12 @@ class Buku extends CI_Controller
     //halaman buku
     public function index()
     {
-        $data['buku'] = $this->Buku_model->getAllBuku();
+        if($this->session->userdata('role') == 1){
+            $data['buku'] = $this->Buku_model->getAllBukuUser();
+        }
+        else {
+            $data['buku'] = $this->Buku_model->getAllBuku();
+        }
 
         $this->load->view('panel/dash_header', $data);
         $this->load->view('panel/dash_sidebar');
@@ -25,7 +34,9 @@ class Buku extends CI_Controller
 
     public function add_buku()
     {
-
+        if($this->session->userdata('role') == 1){
+            redirect('user');
+        }
         $data['kategori'] = $this->Kategori_model->getKategori();
 
         $this->form_validation->set_rules('id_kategori', 'Kategori', 'required|trim', [
@@ -113,6 +124,9 @@ class Buku extends CI_Controller
 
     public function edit_buku($id)
     {
+        if($this->session->userdata('role') == 1){
+            redirect('user');
+        }
         $data['kategori'] = $this->Kategori_model->getKategori();
         $data['buku'] = $this->db->get_where('buku', ['id_buku' => $id])->row_array();
         $check = $this->db->get_where('buku', ['id_buku' => $id])->row_array();
@@ -211,6 +225,9 @@ class Buku extends CI_Controller
 
     public function delete_buku($id)
     {
+        if($this->session->userdata('role') == 1){
+            redirect('user');
+        }
         $data['getBuku'] = $this->Buku_model->getBuku($id);
 
         $this->Buku_model->deleteBuku($id);
@@ -219,5 +236,11 @@ class Buku extends CI_Controller
         <strong>Sukses!</strong> Data Buku berhasil dihapus!.
         </div>');
         redirect('buku');
+    }
+
+    public function detail_buku($lampiran)
+    {
+        header("content-type: application/pdf");
+        readfile('assets/buku/pdf/' . $lampiran);
     }
 }

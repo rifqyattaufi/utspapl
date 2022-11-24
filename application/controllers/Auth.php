@@ -40,21 +40,16 @@ class Auth extends CI_Controller
         $user = $this->User_model->getUserByEmail($email);
 
         if ($user) {
-            if ($user['is_active'] == 1) {
-                if (password_verify($password, $user['password'])) {
-                    $data = [
-                        'email' => $user['email'],
-                        'name' => $user['name'],
-                        'role' => $user['role']
-                    ];
-                    $this->session->set_userdata($data);
-                    redirect('user');
-                } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
-                    redirect('auth');
-                }
+            if (password_verify($password, $user['password'])) {
+                $data = [
+                    'email' => $user['email'],
+                    'name' => $user['name'],
+                    'role' => $user['role']
+                ];
+                $this->session->set_userdata($data);
+                redirect('user');
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">This Email has not been acivated!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
                 redirect('auth');
             }
         } else {
@@ -103,7 +98,7 @@ class Auth extends CI_Controller
     function logout()
     {
         $this->session->unset_userdata('email');
-        $this->session->unset_userdata('role');
+        $this->session->unset_userdata('role'); 
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
         redirect('auth');
