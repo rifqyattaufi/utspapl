@@ -10,6 +10,11 @@ Author
 - 1201210006 - Ryan Adi Saputra
 - 1201210016 - Muhammad Rifqy Attaufi Pratama N.
 
+*******************
+Repositories
+*******************
+[Berikut adalah repositori kami](https://github.com/rifqyattaufi/utspapl)
+
 
 
 
